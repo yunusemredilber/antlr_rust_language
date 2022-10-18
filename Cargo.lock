@@ -20,7 +20,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "antlr4_rust_arithmetic"
+name = "antlr_rust_arithmetic"
 version = "0.1.0"
 dependencies = [
  "antlr-rust",
