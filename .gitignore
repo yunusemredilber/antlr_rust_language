@@ -1,0 +1,7 @@
+/target
+.DS_Store
+.code
+.idea
+.fleet
+grammar/.antlr/
+src/grammar/
