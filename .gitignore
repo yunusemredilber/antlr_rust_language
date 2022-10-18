@@ -5,3 +5,4 @@
 .fleet
 grammar/.antlr/
 src/grammar/
+*.jar
