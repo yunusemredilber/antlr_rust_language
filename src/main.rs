@@ -2,8 +2,8 @@ mod grammar;
 mod ast;
 mod parse_tree_visitor;
 use grammar::{
-    ArithmeticLexer,
-    ArithmeticParser,
+    LangLexer,
+    LangParser,
 };
 use antlr_rust::InputStream;
 use antlr_rust::tree::Visitable;
@@ -25,9 +25,9 @@ fn main() {
 fn str_to_ast(input: &str) -> Option<ast::AST> {
     // Lexical analysis
     dbg!(input);
-    let lexer = ArithmeticLexer::new(InputStream::new(input.into()));
+    let lexer = LangLexer::new(InputStream::new(input.into()));
     let source = CommonTokenStream::new(lexer);
-    let mut parser = ArithmeticParser::new(source);
+    let mut parser = LangParser::new(source);
 
     let parse_tree_root = parser.prog().expect("parse tree root node");
 

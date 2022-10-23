@@ -2,11 +2,11 @@ use std::borrow::Cow;
 use crate::grammar::{
     ProgContext,
     Int_valueContext,
-    ArithmeticParserContextType,
+    LangParserContextType,
     Binary_operationContext,
     ParenthesesContext,
     ProgContextAttrs,
-    ArithmeticVisitor
+    LangVisitor
 };
 use antlr_rust::tree::{ParseTreeVisitor, Visitable};
 use crate::ast::AST;
@@ -15,9 +15,9 @@ pub struct CustomParseTreeVisitor<'node> {
     pub _nodes: Vec<AST<'node>>
 }
 
-impl<'node> ParseTreeVisitor<'node, ArithmeticParserContextType> for CustomParseTreeVisitor<'node> {}
+impl<'node> ParseTreeVisitor<'node, LangParserContextType> for CustomParseTreeVisitor<'node> {}
 
-impl<'node> ArithmeticVisitor<'node> for CustomParseTreeVisitor<'node> {
+impl<'node> LangVisitor<'node> for CustomParseTreeVisitor<'node> {
     fn visit_prog(&mut self, ctx: &ProgContext<'node>) {
         ctx.expr_all().iter().for_each(|item| item.accept(self));
 

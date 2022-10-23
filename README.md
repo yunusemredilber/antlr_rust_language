@@ -1,6 +1,6 @@
-# ANTLR Rust Arithmetic
+# ANTLR Rust Language (Arithmetic)
 
-A super simple arithmetic grammar parsing example with ANTLR4 rust target.
+A super simple language grammar parsing example with ANTLR4 rust target.
 
 It can be used to kicksart a rust based parsing project using ANTLR4.
 
@@ -9,7 +9,7 @@ It can be used to kicksart a rust based parsing project using ANTLR4.
 - A simple *arithmetic* grammar written in [ANTLR4](https://github.com/antlr/antlr4).
 - Building it's ANTLR entites in rust by using [antlr-rust](https://github.com/rrevenantt/antlr4rust).
 - Using the generated code to obtain [parse tree](https://en.wikipedia.org/wiki/Parse_tree).
-- Visitor implementation to create a basic [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree).
+- [Visitor](https://en.wikipedia.org/wiki/Visitor_pattern) implementation to create a basic [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree).
 
 ## Demo
 
@@ -49,7 +49,7 @@ curl -OL https://github.com/rrevenantt/antlr4rust/releases/download/antlr4-4.8-2
 Build the ANTLR entites for rust target:
 
 ```bash
-java -jar ./antlr4-4.8-2-SNAPSHOT-complete.jar -Dlanguage=Rust -visitor grammar/Arithmetic.g4 -o src
+java -jar ./antlr4-4.8-2-SNAPSHOT-complete.jar -Dlanguage=Rust -visitor grammar/Lang.g4 -o src
 ```
 
 Build and run the application

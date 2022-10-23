@@ -1,5 +1,5 @@
 
-grammar Arithmetic;
+grammar Lang;
 prog:   (expr NEWLINE)* ;
 expr:   left=expr op=('*'|'/'|'+'|'-') right=expr #binary_operation
     |   '(' expr ')' #parentheses
