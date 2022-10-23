@@ -22,11 +22,13 @@ Prog(
     BinaryOperation(
       "*",
       IntVal(23),
-      BinaryOperation(
-        "+",
-        IntVal(22),
-        IntVal(3),
-      ),
+      Parentheses(
+        BinaryOperation(
+          "+",
+          IntVal(22),
+          IntVal(3),
+        ),
+      )
     ),
   ],
 ),

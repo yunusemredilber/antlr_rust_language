@@ -41,7 +41,12 @@ impl<'node> LangVisitor<'node> for CustomParseTreeVisitor<'node> {
     }
 
     fn visit_parentheses(&mut self, ctx: &ParenthesesContext<'node>) {
-        self.visit_children(ctx);
+        ctx.child.as_ref().unwrap().accept(self);
+
+        let child = self._nodes.pop().unwrap();
+
+        let prog = AST::Parentheses(Box::new(child));
+        self._nodes.push(prog);
     }
 
     fn visit_binary_operation(&mut self, ctx: &Binary_operationContext<'node>) {
