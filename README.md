@@ -36,7 +36,7 @@ Prog(
 
 ## Run Locally
 
-Go to the project directory
+Go to the project directory:
 
 ```bash
 cd antlr_rust_arithmetic
@@ -48,13 +48,7 @@ Download the [latest](https://github.com/rrevenantt/antlr4rust/releases) custom 
 curl -OL https://github.com/rrevenantt/antlr4rust/releases/download/antlr4-4.8-2-Rust0.3.0-beta/antlr4-4.8-2-SNAPSHOT-complete.jar
 ```
 
-Build the ANTLR entites for rust target:
-
-```bash
-java -jar ./antlr4-4.8-2-SNAPSHOT-complete.jar -Dlanguage=Rust -visitor grammar/Lang.g4 -o src
-```
-
-Build and run the application
+Build and run the application:
 
 ```bash
 cargo run
