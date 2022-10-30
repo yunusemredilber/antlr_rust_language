@@ -15,21 +15,25 @@ It can be used to kicksart a rust based parsing project using ANTLR4.
 
 ```bash
 > Write something like '(3+4)*2' to see the generated AST. ^C to exit:
-> 23*(22+3)
+> 23 * (22 + -3)
 
 Prog(
   [
-    BinaryOperation(
-      "*",
-      IntVal(23),
-      Parentheses(
-        BinaryOperation(
-          "+",
-          IntVal(22),
-          IntVal(3),
-        ),
-      )
-    ),
+    Stat(
+      BinaryExpr(
+        "*",
+        NumberLiteral(23.0),
+        ParenthesizedExpr(
+          BinaryExpr(
+            "+",
+            NumberLiteral(22.0),
+            Negative(
+              NumberLiteral(3.0)
+            ),
+          ),
+        )
+      ),
+    )
   ],
 ),
 ```
