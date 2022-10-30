@@ -1,6 +1,6 @@
 grammar Lang;
 
-prog:   stat* EOF;
+prog: stat* EOF;
 
 stat
  : expr EOS

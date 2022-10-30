@@ -1,5 +1,5 @@
-use std::process::Command;
 use std::path::Path;
+use std::process::Command;
 
 fn main() {
     let antlr_path = "./antlr4-4.8-2-SNAPSHOT-complete.jar";
@@ -10,14 +10,14 @@ fn main() {
     println!("cargo:rerun-if-changed=grammar/Lang.g4");
 
     let _command = Command::new("java")
-    .arg("-jar")
-    .arg(antlr_path)
-    .arg("-Dlanguage=Rust")
-    .arg("-visitor")
-    .arg("grammar/Lang.g4")
-    .arg("-o")
-    .arg("src")
-    .spawn()
-    .expect("antlr tool failed to start")
-    .wait_with_output();
+        .arg("-jar")
+        .arg(antlr_path)
+        .arg("-Dlanguage=Rust")
+        .arg("-visitor")
+        .arg("grammar/Lang.g4")
+        .arg("-o")
+        .arg("src")
+        .spawn()
+        .expect("antlr tool failed to start")
+        .wait_with_output();
 }
